@@ -56,5 +56,5 @@ def handleImage(img_path, file_name):
     preds = preds.mul(255.0).cpu().numpy().squeeze(0).squeeze(0)
     output = np.array([preds, ycbcr[..., 1], ycbcr[..., 2]]).transpose([1, 2, 0])
     output = cv2.cvtColor(output, cv2.COLOR_YCR_CB2BGR)
-    cv2.imwrite("./static/redata/" + file_name + ".bmp", output)
+    cv2.imwrite("./static/redata/" + file_name+"_sr.bmp", output)
     return True
